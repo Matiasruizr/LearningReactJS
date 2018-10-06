@@ -1,4 +1,4 @@
-# LearningReactJS [![Build Status]()]()
+# LearningReactJS 
 
 Aprende una vez, escribe donde quieras
 
