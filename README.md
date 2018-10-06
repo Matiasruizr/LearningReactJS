@@ -81,3 +81,19 @@ Uilizamos las siguientes dependencias
   ReactDom.render(holaMundo,app); // El primer parametro es qué renderizar, el segundo es donde hacerlo
   
 ```
+
+Para compilar esto de manera local de forma mas simple corremos npm run:dev, y en el html, cargamos el js que ocupa el localhost:9000
+ ```
+  index:html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mi app de Video</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="http://localhost:9000/js/app-de-video.032ae12addf220baabb4.js"></script>
+  </body>
+  </html>
+```
