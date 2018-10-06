@@ -1,4 +1,4 @@
-# learninReactJS
+# LearningReactJS
 
 Aprende una vez, escribe donde quieras
 
