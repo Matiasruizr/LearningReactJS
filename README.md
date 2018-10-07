@@ -97,3 +97,46 @@ Para compilar esto de manera local de forma mas simple corremos npm run:dev, y e
   </body>
   </html>
 ```
+
+
+
+
+Carpeta 
+
+  SRC
+    Components
+  
+  En los  componentes utilizamos JSX, javascript con HTML!
+  
+  Los componentes tienen:
+  
+  Un import de React,
+  luego se crea la clase extendiendo los atributos de component de React
+  en el metodo render, creamos lo que vamos a retornar, lo cual sera codigo jsx (html js)
+  
+  luego elegimos que deseamos exportar, en la mayoria de los casos, será la clase del componente
+```
+
+import React from 'react';
+
+class Media extends React.Component {
+    render(){
+        return(
+            <div>
+               <img 
+               src="" 
+               alt="" 
+               width={260} 
+               height={160} 
+               />
+               <h3>¿Por qué aprender React?</h3>
+               <p>Matias Ruiz</p>
+            </div>
+        )
+    }
+}
+
+export default Media;
+```
+
+  
