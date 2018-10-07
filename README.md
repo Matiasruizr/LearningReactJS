@@ -82,7 +82,7 @@ Uilizamos las siguientes dependencias
   
 ```
 
-Para compilar esto de manera local de forma mas simple corremos npm run:dev, y en el html, cargamos el js que ocupa el localhost:9000
+Para compilar esto de manera local de forma mas simple corremos npm run build:dev, y en el html, cargamos el js que ocupa el localhost:9000
  ```
   index:html
   <!DOCTYPE html>
@@ -117,7 +117,7 @@ Carpeta
   luego elegimos que deseamos exportar, en la mayoria de los casos, será la clase del componente
 ```
 
-import React from 'react';
+import React, { Component } from'react'
 
 class Media extends React.Component {
     render(){
@@ -140,3 +140,22 @@ export default Media;
 ```
 
   
+En nuestro index lo importamos y lo cargamos en el render, con tags de HTML para que REACT sepa que es un componente.
+```
+import React from 'react';
+import ReactDom from 'react-dom';
+import Media from './src/components/media';
+ReactDom.render(<Media />,app);
+```
+Tipos de componentes que podemos utilizar:
+Funcional: Este tipo de componentes se definen como funciones y no tiene ni trabajan con estados.
+
+Puro: También se implementan como clases, pero en este caso van a extender de React.PureComponent.
+
+Normal o de Estado: Las principales características de este tipo de componentes es que utilizan la encapsulación en clases, tienen un estado que definen, y actualizan.
+
+
+
+
+# Estilos en componentes
+Para agregar estilos a nuestros componentes crearemos un archivo css para cada uno de ellos, en la misma carpeta e importaremos este css en nuestro componente
