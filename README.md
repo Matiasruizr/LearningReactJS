@@ -159,3 +159,25 @@ Normal o de Estado: Las principales características de este tipo de componentes
 
 # Estilos en componentes
 Para agregar estilos a nuestros componentes crearemos un archivo css para cada uno de ellos, en la misma carpeta e importaremos este css en nuestro componente
+
+
+# Propiedades en componentes
+
+Podemos hacer nuestros componentes dinamicos, pasando atributos por parametro al agregar la etiqueta al render, estos son casi como agregar atributos de HTML
+
+<Media title="¿Qué es responsive design?" autor="Matias Ruiz" image="/images/covers/responsive.jpg"/>
+
+En nuestro componente el codigo quedaria así 
+```
+ <div className="Media">
+       <img 
+       src={this.props.image} 
+       alt="" 
+       width={260} 
+       height={160} 
+       className="Media-cover" />
+       <h3 className="Media-title">{this.props.title}</h3>
+       <p className="Media-author">{this.props.autor}</p>
+    </div>
+```
+
