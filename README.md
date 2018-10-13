@@ -181,3 +181,24 @@ En nuestro componente el codigo quedaria así
     </div>
 ```
 
+
+# Validando propiedades react
+
+Instalamos prop types 
+npm install prop-types
+
+Lo importamos al inicio de nuestro proyecto 
+```
+import PropTypes from 'prop-types';
+```
+Luego antes del export, validamos lo que necesitemos.
+Ejemplo:
+```
+Media.propTypes = {
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    type: PropTypes.oneOf(['video','audio']),
+}
+```
+
