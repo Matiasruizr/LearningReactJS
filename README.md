@@ -299,3 +299,16 @@ constructor(){
 
 
 ```
+
+# Listas en React
+Para cargar una api, simplemente dejamos nuestra api en nuestros archivos en src y los importamos
+
+```
+import Datos from './src/api.json';
+```
+Dentro de un rendes le pasamos por parametros estos datos a nuestro componente
+
+```
+render(<Playlist data={Datos}/>,app);
+```
+
