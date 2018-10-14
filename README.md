@@ -201,4 +201,55 @@ Media.propTypes = {
     type: PropTypes.oneOf(['video','audio']),
 }
 ```
-
+# Eventos Enlazados al DOM
+Para utilizar un evento, por ejemplo, el click, debemos permitir utilizar las propiedades desde el constructor.
+```
+constructor(props){ // Esta clase se llama cuando se renderiza el elemento "Media", esta manera se utilizaba en EC6, es bueno considerarla
+      super(props);   // Permitimos utilizar las propiedades
+      this.handleClick = this.handleClick.bind(this); // Permitimos utilizar las propiedades para el evento
+      this.state = {
+          autor: props.autor
+      }
+    }
+  ```
+  Creamos un evento click que ejecute una accion, esta funcion se crea tambien en el codigo del componente
+ ```
+ handleClick(event){ 
+        this.setState({
+            autor: 'Ayleen Cisternas'
+        });
+    }
+ ```
+ 
+  ```
+   <div className="Media" onClick={this.handleClick}>>
+       <h3 className="Media-title">{this.props.title}</h3>
+       <p className="Media-author">{this.state.autor}</p>
+    </div>
+   ```
+   
+   # Estado de los componentes en ReactJs
+   
+   Las propiedades son inmutables, para crear cambios en estas ocupamos los estados.
+   Estos estados se inicializan en el constructor
+   
+   ```
+    constructor(props){ // Esta clase se llama cuando se renderiza el elemento "Media", esta manera se utilizaba en EC6, es bueno considerarla
+      this.state = {
+          autor: props.autor
+      }
+    }
+   ```
+En el JSX utilizaremos 
+```
+   <div className="Media" onClick={this.handleClick}>>
+       <h3 className="Media-title">{this.props.title}</h3>
+       <p className="Media-author">{this.state.autor}</p>
+    </div>
+   ```
+La funcuon para editar estados es 
+```
+     this.setState({
+            autor: 'Ayleen Cisternas'
+      });
+```
