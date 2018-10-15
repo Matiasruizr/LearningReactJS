@@ -311,4 +311,51 @@ Dentro de un rendes le pasamos por parametros estos datos a nuestro componente
 ```
 render(<Playlist data={Datos}/>,app);
 ```
+# Componentes puros y funcionales
+
+PureComponent: tiene el método shouldComponentUpdate ya asignado (por defecto), si a este componente no se le actualizan las propiedades, no tenemos que validar a mano con shouldComponentUpdate, PureComponent lo hace por nosotros, es decir; si recibe nuevas propiedades pero son las que ya teniamos, no se re-renderiza.
+
+```
+import React, { PureComponent } from 'react';
+
+classPlaylistextendsPureComponent{
+  render() {
+    <Componente />
+    }
+}
+```
+
+Componente Funcional: Es una función la cual solo retorna el JSX de nuestro componente (renderiza UI), es mas sencillo, mas fácil de probar y este componente no tiene ciclo de vida.
+```
+import React from 'react';
+
+functionPlaylist(props) {
+  return<Componentetitle={props.title} />
+}
+```
+# Smart and dumb component
+
+Como se vs como se hace
+
+# Presentacional Cómo se ve
+
+Puede contener smart components u otros componentes de UI
+Permiten composición con `[props.children]`
+No depeden del resto de la aplicación
+No especifica cómo los datos son cargados o mutados
+Recibe datos y callbacks solo con propiedades
+Rara vez tienen su propio estado
+Están escritos como componentes funcionales a menos que necesiten mejoras de performance. Sólo pueden ser Componentes funcionales o Pure Components
+
+
+# Containers Qué hace
+
+Concetrado en el funcionamiento de la aplicación
+Contienen componentes de UI u otros containers
+No tienen estilos
+Proveen de datos a componentes de UI u otros contenedores
+Proveen de callbacks a la UI
+Normalmente tienen estado
+Llaman acciones
+Generados por higher order components
 
