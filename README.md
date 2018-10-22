@@ -359,3 +359,5 @@ Normalmente tienen estado
 Llaman acciones
 Generados por higher order components
 
+
+# Composicion de componentes
