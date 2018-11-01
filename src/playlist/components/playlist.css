@@ -1,0 +1,6 @@
+.Playlist{
+    overflow-x: none;
+    white-space: nowrap;  
+    padding-bottom: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
