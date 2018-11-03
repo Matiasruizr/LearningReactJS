@@ -1,41 +1,44 @@
-import React, { PureComponent } from'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
 
-
 class Media extends PureComponent {
-    constructor(props){ // Esta clase se llama cuando se renderiza el elemento "Media", esta manera se utilizaba en EC6, es bueno considerarla
-      super(props);   // Permitimos utilizar las propiedades
-      this.handleClick = this.handleClick.bind(this); // Permitimos utilizar las propiedades para el evento
-    }
-    handleClick(event){ 
-        this.setState({
-            autor: 'Matias Ruiz'
-        });
-    }
+  state = {
+    // author: 'Leonidas Esteban'
+  }
 
-    render(){
-        
-        return(
-            <div className="Media" onClick={this.handleClick}>
-               <img 
-               src={this.props.cover} 
-               alt="" 
-               width={250} 
-               height={150} 
-               className="Media-cover" />
-               <h3 className="Media-title">{this.props.title}</h3>
-               <p className="Media-author">{this.props.author}</p>
-            </div>
-        )
+  render() {
+    const styles = {
+      container: {
+        color: '#44546b',
+        cursor: 'pointer',
+        width: 260,
+        border: '1px solid red'
+      }
     }
-    
+    return (
+      <div className="Media" onClick={this.props.handleClick}>
+        <div className="Media-cover">
+          <img
+            src={this.props.cover}
+            alt=""
+            width={260}
+            height={160}
+            className="Media-image"
+          />
+          <h3 className="Media-title">{this.props.title}</h3>
+          <p className="Media-author">{this.props.author}</p>
+        </div>
+      </div>
+    )
+  }
 }
 
 Media.propTypes = {
-    image: PropTypes.string.isRequired,
-    title: PropTypes.string,
-    author: PropTypes.string,
-    type: PropTypes.oneOf(['video','audio']),
+  cover: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  type: PropTypes.oneOf(['video', 'audio']),
 }
+
 export default Media;
