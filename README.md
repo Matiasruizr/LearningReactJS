@@ -361,3 +361,30 @@ Generados por higher order components
 
 
 # Composicion de componentes
+
+
+
+# Referencias
+Las referencias nos permite alamacenar en react un elemento HTML.
+
+//componente.jsx
+<input type="text" ref={props.setRef} />
+//usando el componente
+
+setInputRef = element => {
+  this.input = element;
+}
+
+render() {
+  return (
+    <ComponentesetRef={this.setInputRef}/>
+  )
+}
+Input en React
+Si se asigna el valor de value se define como un valor constanete, es decir, no va a poder ser modificado.
+
+Si se desea asignar un valor inicial, pero que este pueda ser modificado, entonces se usa la propiedad defaultValue.
+
+Si se desea manipular el valor asignado a value se puede hacer con el método onChange del input.
+
+Si quieren ver mi resumen completo lo pueden hacer aquí. Lo iré actualizado a medida que vaya avanzado con el curso.
